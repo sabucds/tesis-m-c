@@ -1,0 +1,44 @@
+{
+  "name": "@avila-tek/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "check:types": "tsc --noEmit",
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src .env | pino-pretty --colorize"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.7.5",
+    "@as-integrations/fastify": "^2.0.0",
+    "@avila-tek/mongoose-algolia": "^1.0.0",
+    "@fastify/cors": "^8.3.0",
+    "@fastify/helmet": "^11.0.0",
+    "@fastify/rate-limit": "^8.0.3",
+    "@sinclair/typebox": "^0.29.4",
+    "ajv": "^8.12.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.19.2",
+    "fastify-plugin": "^4.5.0",
+    "graphql": "^16.7.1",
+    "graphql-compose": "^9.0.10",
+    "graphql-compose-connection": "^8.2.1",
+    "graphql-compose-mongoose": "^9.8.0",
+    "mongoose": "^7.3.4",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@avila-tek/tsconfig": "*",
+    "@types/node": "^20.4.1",
+    "eslint": "^8.44.0",
+    "eslint-config-avila-tek": "*",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "pino-pretty": "^10.0.1",
+    "prettier": "^3.0.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}

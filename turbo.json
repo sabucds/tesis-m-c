@@ -1,0 +1,57 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "NODE_ENV"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ],
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET",
+        "DATABASE",
+        "LOG_LEVEL",
+        "NODE_ENV"
+      ]
+    },
+    "build#@avila-tek/api": {
+      "env": [
+        "DATABASE",
+        "LOG_LEVEL",
+        "NODE_ENV"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "build#@avila-tek/merchant-center": {
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET"
+      ]
+    },
+    "build#@avila-tek/storefront": {
+      "env": [
+        "NEXTAUTH_URL",
+        "NEXTAUTH_SECRET"
+      ]
+    },
+    "lint": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

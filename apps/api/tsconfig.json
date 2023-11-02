@@ -1,0 +1,13 @@
+{
+  "extends": "@avila-tek/tsconfig/api.json",
+  "compilerOptions": {
+    "sourceRoot": "/",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules"]
+}
